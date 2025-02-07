@@ -5,7 +5,7 @@ package sampleTwo;
  * [詳細] <p>作成した例外クラス。</p>
  * [補充] <p>特になし。</p>
  */
-public class InvalidAgeException extends Exception{
+public class InsufficientBalanceException extends Exception{
 
 	/**
 	 * UID
@@ -19,7 +19,7 @@ public class InvalidAgeException extends Exception{
 	 * 
 	 * @param message 例外メッセージ
 	 */
-	public InvalidAgeException(String message) {
+	public InsufficientBalanceException(String message) {
         super(message);
     }
 

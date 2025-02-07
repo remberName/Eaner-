@@ -41,9 +41,9 @@ public class BankAccountException {
                 balance += amount;
                 System.out.println(amount + "円が預金されました。");
             } else {
-               throw new InvalidAgeException("預金額は正の数でなければなりません。");
+               throw new InsufficientBalanceException("預金額は正の数でなければなりません。");
             }
-        }catch (InvalidAgeException e) {
+        }catch (InsufficientBalanceException e) {
 			e.printStackTrace();
 		}
     }
@@ -65,9 +65,9 @@ public class BankAccountException {
                     System.out.println("残高不足です。");
                 }
             } else {
-                throw new InvalidAgeException("預金額は正の数でなければなりません。");
+                throw new InsufficientBalanceException("預金額は正の数でなければなりません。");
             }
-    	}catch (InvalidAgeException e) {
+    	}catch (InsufficientBalanceException e) {
 			e.printStackTrace();
 		}
         
