@@ -2,7 +2,7 @@ package sampleTwo;
 
 /**
  * [概要] <p>残高管理クラス。</p>
- * [詳細] <p>残高の入出金を管理するプログラム。</p>
+ * [詳細] <p>残高の入出金を管理するクラス。</p>
  * [補充] <p>特になし。</p>
  */
 public class BankAccountException {
@@ -35,12 +35,17 @@ public class BankAccountException {
      * @param amount　預金額
      */
     public void deposit(double amount) {
-        if (amount > 0) {
-            balance += amount;
-            System.out.println(amount + "円が預金されました。");
-        } else {
-            System.out.println("預金額は正の数でなければなりません。");
-        }
+    	
+        try {
+        	if (amount > 0) {
+                balance += amount;
+                System.out.println(amount + "円が預金されました。");
+            } else {
+               throw new InvalidAgeException("預金額は正の数でなければなりません。");
+            }
+        }catch (InvalidAgeException e) {
+			e.printStackTrace();
+		}
     }
 
     /**
@@ -51,16 +56,21 @@ public class BankAccountException {
      * @param amount　引き出し額
      */
     public void withdraw(double amount) {
-        if (amount > 0) {
-            if (amount <= balance) {
-                balance -= amount;
-                System.out.println(amount + "円が引き出されました。");
+    	try{
+    		if (amount > 0) {
+                if (amount <= balance) {
+                    balance -= amount;
+                    System.out.println(amount + "円が引き出されました。");
+                } else {
+                    System.out.println("残高不足です。");
+                }
             } else {
-                System.out.println("残高不足です。");
+                throw new InvalidAgeException("預金額は正の数でなければなりません。");
             }
-        } else {
-            System.out.println("引き出し額は正の数でなければなりません。");
-        }
+    	}catch (InvalidAgeException e) {
+			e.printStackTrace();
+		}
+        
     }
 
     /**

@@ -2,15 +2,15 @@ package sampleTwo;
 
 
 /**
- * [概要] <p>演習課題入口クラス。</p>
- * [詳細] <p>演習プログラムのロジック。</p>
+ * [概要] <p>ArithmeticException演習クラス。</p>
+ * [詳細] <p>0除算時にArithmeticExceptionをキャッチするプログラム。</p>
  * [補充] <p>特になし。</p>
  */
-public class NumberException {
+public class NumberExceptionTest {
 	
 	/**
-	 * [概要] <p>演習課題入口クラス。</p>
-	 * [詳細] <p>演習プログラムのロジック。</p>
+	 * [概要] <p>0除算メソッド。</p>
+	 * [詳細] <p>0除算時Exceptionをキャッチする。</p>
 	 * [補充] <p>特になし。</p>
 	 */
 	public void exceptionThrow() {

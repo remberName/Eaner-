@@ -17,10 +17,17 @@ public class SampleTwoLogic {
 	 */
 	public static void main(String[] args) {
 
-		// 
-		// 
-		// 
+		// 残高管理クラス
+//		BankAccountException bankAccountException = new BankAccountException(1_000.00);
+//		bankAccountException.withdraw(-1);
 		
+		// ArithmeticException練習クラス
+//		NumberExceptionTest exceptionTest=new NumberExceptionTest();
+//		exceptionTest.exceptionThrow();
+		
+		// ファイル読み込むクラス
+		LoadFileTest fileTest = new LoadFileTest();
+		fileTest.getFile();
 	}
 
 }

@@ -39,7 +39,7 @@ public class BankAccount {
             balance += amount;
             System.out.println(amount + "円が預金されました。");
         } else {
-            System.out.println("預金額は正の数でなければなりません。");
+            System.out.println("");
         }
     }
 
