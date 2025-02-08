@@ -5,8 +5,7 @@ package a_1_4;
  * [詳細] <p>動物クラスから継承した猫クラス。</p>
  * [補充] <p>特になし。</p>
  */
-public class Cat extends Animal{
-	
+public class Cat extends AnimalAbstract {
 	
 	public Cat(String name, int sex, String specie) {
 		super(name, sex, specie);

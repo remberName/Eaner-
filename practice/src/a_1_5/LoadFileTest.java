@@ -12,26 +12,27 @@ import java.io.IOException;
  */
 public class LoadFileTest {
 
+	public static void main(String[] args) {
+		LoadFileTest t = new LoadFileTest();
+		t.getFile();
+	}
+	
 	/**
 	 * [概要] <p>ファイル読み込むメソッド。</p>
 	 * [詳細] <p>ファイル読み込む。</p>
 	 * [補充] <p>特になし。</p>
 	 */
 	public void getFile() {
-		
-		try {
-			// ファイルを読み込むための準備
-			FileReader file = new FileReader("aaas.aa");
-			BufferedReader reader = new BufferedReader(file);
-			
+
+		try (FileReader file = new FileReader("aaas.aa"); 
+				BufferedReader reader = new BufferedReader(file)) {
 			String line;
 			while ((line = reader.readLine()) != null) {
 				System.out.println(line);
 			}
-		
-		}catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-		}catch (IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}

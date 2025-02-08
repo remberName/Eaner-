@@ -2,14 +2,12 @@ package a_1_4;
 
 import java.util.Scanner;
 
-
-
 /**
  * [概要] <p>演習課題入口クラス。</p>
  * [詳細] <p>演習プログラムのロジック。</p>
  * [補充] <p>特になし。</p>
  */
-public class OneLogic {
+public class Index {
 	
 	/**
 	 * [概要] <p>アプリケーションの入口メソッド。</p>
@@ -27,7 +25,8 @@ public class OneLogic {
 		// 猫クラス
 		Cat cat = new Cat("五郎", 0, "ニャーニャー");
 		// 電気クラス
-		Appliances appliances = new Appliances();
+		AppliancesIF tv = new Tv();
+		AppliancesIF refrigerator = new Refrigerator();
 
 		// Scannerオブジェクトを作成して、入力を受け取る
 		try (Scanner scanner = new Scanner(System.in)) {
@@ -64,8 +63,10 @@ public class OneLogic {
 						break;
 					// 電気
 					case 4:
-						appliances.tvAppliances();
-						appliances.refrigeratorAppliances();
+						tv.whoAmI();
+						refrigerator.whoAmI();
+						new Index().getName(tv);
+						new Index().getName(refrigerator);
 						break;
 						
 					// プログラム終了
@@ -89,5 +90,9 @@ public class OneLogic {
 		} catch (Exception e) {
 			System.out.println("プログラム異常");
 		}
+	}
+	
+	public void getName(AppliancesIF app) {
+		app.getName();
 	}
 }

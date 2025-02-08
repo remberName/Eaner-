@@ -73,7 +73,15 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return "Person [name=" + name + ", sex=" + sex + ", address=" + address + ", phoneNumber=" + phoneNumber + "]";
+		return "Person [name=" + name + ", sex=" + sex + ", address=" + address + ", phoneNumber=" + phoneNumber
+				+ ", 電話番号が持っているかどうか：" + (hasPhoneNumber() ? "あり" : "なし") + "]";
 	}
 	
+	/**
+	 * カプセル化メソッド
+	 * @return 電話持っているかどうか返却
+	 */
+	public boolean hasPhoneNumber() {
+		return this.phoneNumber != null && !this.phoneNumber.equals("");
+	}
 }

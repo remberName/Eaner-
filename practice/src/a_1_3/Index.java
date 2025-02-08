@@ -7,7 +7,7 @@ import java.util.Scanner;
  * [詳細] <p>演習プログラムのロジック。</p>
  * [補充] <p>特になし。</p>
  */
-public class LogicClass {
+public class Index {
 
 	/**
 	 * [概要] <p>アプリケーションの入口メソッド。</p>
