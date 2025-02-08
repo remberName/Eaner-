@@ -6,7 +6,7 @@ import java.util.Arrays;
  * [説明]　<p>研修問題の答え。</p>
  * [補充]　<p>特になし。</p>
  */
-public class HelloWorld{
+public class A11HelloWorld{
 	
 	/**
 	 * [名称]　<p>mainメソッド</p>
