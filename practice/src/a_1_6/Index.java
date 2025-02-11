@@ -19,7 +19,7 @@ public class Index {
 		// データ管理クラス
 		DataManagement dataManagement = new DataManagement();
 		// データ読み込みクラス
-		FileManipulation fileManipulation = new FileManipulation();
+		FileOperation fileManipulation = new FileOperation();
 		// 文字列操作クラス
 		StringManipulation manipulation = new StringManipulation();
 		

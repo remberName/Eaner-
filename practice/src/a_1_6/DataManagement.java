@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class DataManagement {
 	
-	private List<String> list = new ArrayList<String>();
+	private List<String> list = new ArrayList<>();
 	
 	/**
 	 * [概要] <p>ロジックメソッド。</p>
@@ -25,7 +25,7 @@ public class DataManagement {
 		init();
 
 		// リスト展示メソッド
-		System.out.println("リスト展示");
+		System.out.println("リスト表示");
 		showList();
 
 		// データ追加メソッド
@@ -79,10 +79,10 @@ public class DataManagement {
 		// データを検証する
 		boolean answer = judgment(str);
 		
-		if(answer) {
+		if (answer) {
 			// データ追加
 			list.add(str);
-		}else {
+		} else {
 			System.out.println("データ追加失敗しました、データの格式を確認してください。");
 		}
 		
@@ -103,24 +103,24 @@ public class DataManagement {
 		int index = str.indexOf(",");
 		
 		// 「,」存在する場合
-		if(index > 0) {
+		if (index > 0) {
 			
 			// 「,」でデータを分割
 			String[] splitStr = str.split(","); 
 			// 性別検証
-			if(splitStr[1].equals("1")||splitStr[1].equals("0")) {
+			if (splitStr[1].equals("1") || splitStr[1].equals("0")) {
 				// 正規表現で年齢検証
-				if(splitStr[2].matches("^(100|[1-9]?[0-9])")) {
+				if (splitStr[2].matches("^(100|[1-9]?[0-9])")) {
 					return true;
-				}else {
+				} else {
 					return false;
 				}
-			}else {
+			} else {
 				return false;
 			}
 			
 		//存在しない場合	
-		}else {
+		} else {
 			return false;
 		}
 	}
@@ -137,30 +137,30 @@ public class DataManagement {
 		
 		// データ存在かどうかフラグ
 		boolean findData = false;
-		
+
 		// リストをループする
 		for (Iterator<String> iterator = list.iterator(); iterator.hasNext();) {
-			
+
 			// 要素を取る
 			String string = (String) iterator.next();
-			
+
 			// 取った要素を「,」で分割、index[0]の要素と引数を同じか判断する
 			findData = string.split(",")[0].equals(str);
-			
-			if(findData) {
+
+			if (findData) {
 				// 存在する場合は削除
 				iterator.remove();
-				
+
 				// ループ終了
 				break;
 			}
 		}
-		
+
 		// 存在しな場合は出力
-		if(!findData) {
+		if (!findData) {
 			System.out.println("削除できませんでした。入力した名前を確認してください");
 		}
-		
+
 		return list;
 	}
 	
@@ -178,14 +178,14 @@ public class DataManagement {
 		boolean findData = false;
 
 		// リストをループする
-		for (int i = 0;i<list.size();i++) {
+		for (int i = 0; i < list.size(); i++) {
 
 			// 取った要素を「,」で分割、index[0]の要素と引数を同じか判断する
 			findData = list.get(i).split(",")[0].equals(str);
 
 			if (findData) {
 				// 存在する場合は更新
-				list.set(i, dataStr); 
+				list.set(i, dataStr);
 
 				// ループ終了
 				break;

@@ -1,5 +1,9 @@
 package a_1_6;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * [概要] <p>文字列操作クラス。</p>
  * [説明] <p>文字列操作クラス。</p>
@@ -22,6 +26,10 @@ public class StringManipulation {
 		// 文字列分割
 		System.out.println("\n文字列分割引数：zabcdefghizjklmnopqrzstuvwxyz,z");
 		splitString("zabcdefghizjklmnopqrzstuvwxyz", "z");
+		
+		// 文字列分割
+		System.out.println("\n文字列分割引数：a2b2c2d2e1w5,[0-9]");
+		splitString("a2b2c2d2e1w5", "[0-9]");
 		
 		// 文字列連結
 		System.out.println("\n文字列連結引数：abc,def,efg");
@@ -63,16 +71,16 @@ public class StringManipulation {
 		String[] splitStｒ = str.split(regex);
 		// 分割された文字列を出力
 		System.out.println("分割された文字列：");
-		for(String s : splitStｒ) {
-			System.out.print(s+"\t");
+		for (String s : splitStｒ) {
+			System.out.print(s + "\t");
 		}
-		
+
 		// 三つだけ分割
 		String[] splitStrOnlyThree = str.split(regex, 3);
 		// 分割された文字列を出力
 		System.out.println("\n三つの要素だけ分割：");
-		for(String s : splitStrOnlyThree) {
-			System.out.println(s+"\t");
+		for (String s : splitStrOnlyThree) {
+			System.out.println(s + "\t");
 		}
 		
 	}
@@ -93,5 +101,18 @@ public class StringManipulation {
 		
 		// concatメソッドで連結
 		System.out.println(str1.concat(str2).concat(str3));
+		
+		// format()で連結
+		System.out.println(String.format("%s%s%s", str1, str2, str3));
+
+		// Collectorsで連結
+		List<String> list = Arrays.asList(str1, str2, str3);
+		String result = list.stream().collect(Collectors.joining(""));
+		System.out.println(result);
+
+		// ラムダ式で連結
+		StringBuilder builder = new StringBuilder();
+		list.forEach(s -> builder.append(s));
+		System.out.println(builder.toString());
 	}
 }
